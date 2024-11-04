@@ -25,6 +25,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var submitButton: Button
     private lateinit var editbox: CheckBox
 
+    // this is comment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.homework1)
