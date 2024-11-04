@@ -9,7 +9,6 @@ import androidx.activity.ComponentActivity
 import android.text.Html
 import android.text.method.LinkMovementMethod
 import androidx.appcompat.app.AppCompatActivity
-//import kotlinx.android.synthetic.main.activity_main.*
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
