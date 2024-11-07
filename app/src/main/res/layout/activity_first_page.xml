@@ -1,89 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/backGround"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <View
-            android:id="@+id/first"
+        <Toolbar
             android:layout_width="match_parent"
-            android:layout_height="25.24dp"
-            android:background="#e8e8e8"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/threeElements"
-            android:layout_width="46dp"
-            android:layout_height="10.52dp"
-            android:layout_marginTop="7.36dp"
-            android:layout_marginEnd="7dp"
-            android:src="@drawable/icoons"
-            app:layout_constraintRight_toRightOf="@id/first"
-            app:layout_constraintTop_toTopOf="@id/first"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="17.36dp"
-            android:src="@drawable/ic_arrow_back_24px"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/first"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:id="@+id/zayavka"
-            android:layout_width="224dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="67dp"
-            android:layout_marginTop="36dp"
-            android:fontFamily="@font/rubik"
-            android:text="Заявка на дебетную карту"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="HardcodedText" />
+            android:layout_marginTop="25dp"/>
+
 
         <ImageView
-            android:id="@+id/karta"
-            android:layout_width="256dp"
-            android:layout_height="189dp"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="25dp"
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="94dp"
             android:src="@drawable/card3d"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/zayavka"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:layout_width="301dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="28dp"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="23dp"
+            android:layout_marginTop="325dp"
             android:fontFamily="@font/rubik"
-            android:text="Бонусы*, которые можно
-потратить на любые покупки "
+            android:text="@string/activity_first_page_bonus_text_one"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/karta"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:layout_width="239dp"
-            android:layout_height="34dp"
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="86dp"
-            android:layout_marginTop="409dp"
+            android:layout_marginTop="405dp"
+            android:layout_marginEnd="71dp"
             android:fontFamily="@font/rubik"
-            android:text="1% Гарантированный бонус за каждую безналичную транзакцию"
+            android:text="@string/activity_first_page_text_first"
             android:textColor="#787878"
             android:textSize="14sp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -91,12 +59,14 @@
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:layout_width="239dp"
-            android:layout_height="34dp"
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="86dp"
-            android:layout_marginTop="479dp"
+            android:layout_marginTop="475dp"
+            android:layout_marginEnd="71dp"
             android:fontFamily="@font/rubik"
-            android:text="+2% дополнительный бонус за депозит от 500 000 тенге"
+            android:text="@string/activity_first_page_text_second"
             android:textColor="#787878"
             android:textSize="14sp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -104,12 +74,14 @@
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:layout_width="239dp"
-            android:layout_height="34dp"
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="86dp"
-            android:layout_marginTop="549dp"
+            android:layout_marginTop="543dp"
+            android:layout_marginEnd="71dp"
             android:fontFamily="@font/rubik"
-            android:text="+2% дополнительный бонус за остаток на карте  от 100 000 тенге"
+            android:text="@string/activity_first_page_text_third"
             android:textColor="#787878"
             android:textSize="14sp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -117,6 +89,7 @@
             tools:ignore="HardcodedText" />
 
         <View
+            android:id="@+id/view"
             android:layout_width="46dp"
             android:layout_height="46dp"
             android:layout_marginStart="24dp"
@@ -126,6 +99,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
+            android:id="@+id/view2"
             android:layout_width="46dp"
             android:layout_height="46dp"
             android:layout_marginStart="24dp"
@@ -135,6 +109,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
+            android:id="@+id/view3"
             android:layout_width="46dp"
             android:layout_height="46dp"
             android:layout_marginStart="24dp"
@@ -212,9 +187,9 @@
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginTop="4dp"
-            android:autofillHints=""
+            android:autofillHints="username"
             android:fontFamily="@font/rubik"
-            android:hint="Имя"
+            android:hint="@string/activity_first_page_name"
             android:textColor="#787878"
             android:textColorHint="#787878"
             android:textSize="16sp"
@@ -229,8 +204,9 @@
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginTop="4dp"
+            android:autofillHints="creditCardNumber"
             android:fontFamily="@font/rubik"
-            android:hint="ИИН"
+            android:hint="@string/activity_first_page_iin"
             android:textColor="#787878"
             android:textColorHint="#787878"
             android:textSize="16sp"
@@ -246,7 +222,7 @@
             android:layout_marginStart="48dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/rubik"
-            android:hint="Номер телефона"
+            android:hint="@string/activity_first_page_phone_number"
             android:textColor="#787878"
             android:textColorHint="#787878"
             android:textSize="16sp"
@@ -257,13 +233,13 @@
 
         <CheckBox
             android:id="@+id/editBox"
-            android:layout_width="2566dp"
-            android:layout_height="17dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="877dp"
             android:checked="false"
             android:fontFamily="@font/rubik"
-            android:text="Согласие на обработку личных данных"
+            android:text="@string/activity_first_page_checkbox_text"
             android:textColor="#333333"
             android:textSize="14sp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -280,19 +256,20 @@
             android:fontFamily="@font/rubik"
             android:linksClickable="true"
             android:text="@string/partial_text"
+            android:textColorLink="#9e0606"
             android:textSize="14sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="HardcodedText" />
 
         <TextView
+            android:id="@+id/textView5"
             android:layout_width="317dp"
             android:layout_height="57dp"
             android:layout_marginTop="1021dp"
             android:fontFamily="@font/rubik"
             android:gravity="center"
-            android:text="ДОСТАВКА ПЛАТЕЖНОЙ КАРТОЧКИ ВОЗМОЖНА ТОЛЬКО В ГОРОДАХ:
-НУР-СУЛТАН И АЛМАТЫ"
+            android:text="@string/activity_first_page_delivery_text"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -307,9 +284,16 @@
             android:background="@drawable/button_square"
             android:backgroundTint="#c6c6c6"
             android:enabled="false"
-            android:text="Заказать карту"
+            android:text="@string/activity_first_page_button_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="1158dp"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
