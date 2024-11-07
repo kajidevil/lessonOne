@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#c6c6c6</color>
     <color name="red">#9e0606</color>
+    <color name="button_active">#4CAF50</color>  <!-- Зеленый -->
+    <color name="button_disabled">#D3D3D3</color> <!-- Серый -->
 </resources>

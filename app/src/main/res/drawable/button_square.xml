@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <size android:width="312dp" android:height="56dp" /> <!-- Размер квадрата -->
-    <solid android:color="#ebebeb" /> <!-- Цвет фона -->
-    <corners android:radius="16dp" /> <!-- Радиус закругления углов -->
-</shape>

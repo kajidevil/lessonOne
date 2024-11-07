@@ -4,75 +4,57 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.core.content.ContextCompat
 import com.example.homework.databinding.ActivityFirstPageBinding
-import android.widget.CheckBox
 
 class MainActivity : ComponentActivity() {
-    private lateinit var editText1: EditText
-    private lateinit var editText2: EditText
-    private lateinit var editText3: EditText
-    private lateinit var submitButton: Button
-    private lateinit var editbox: CheckBox
-    private lateinit var viewBinding: ActivityFirstPageBinding
 
+    private lateinit var viewBinding: ActivityFirstPageBinding
     // this is comment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         viewBinding = ActivityFirstPageBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
-        editText1 = findViewById(R.id.editText1)
-        editText2 = findViewById(R.id.editText2)
-        editText3 = findViewById(R.id.editText3)
-        editbox = findViewById(R.id.editBox)
-        submitButton = findViewById(R.id.submitButton)
-        // Устанавливаем слушатель для CheckBox
-        editbox.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                addTextWatchers()
-            } else {
-                // Если CheckBox не отмечен, отключаем кнопку
-                submitButton.isEnabled = false
-                submitButton.backgroundTintList =
-                    ContextCompat.getColorStateList(this, R.color.gray)
-                Toast.makeText(this, "Согласие недано", Toast.LENGTH_SHORT).show()
-            }
-        }
 
-        submitButton.setOnClickListener {
-            Log.d("MainActivity", "Кнопка нажата, переход на SecondActivity")
-            val intent = Intent(this, SecondActivity::class.java)
-            startActivity(intent)
+
+
+
+
+
+// Добавляем TextWatcher для каждого поля EditText
+        viewBinding.editText1.addTextChangedListener(textWatcher)
+        viewBinding.editText2.addTextChangedListener(textWatcher)
+        viewBinding.editText3.addTextChangedListener(textWatcher)
+
+        // Добавляем слушатель для CheckBox
+        viewBinding.editBox.setOnCheckedChangeListener { _, _ -> checkFields() }
+
+        // Обработчик для кнопки
+        viewBinding.submitButton.setOnClickListener {
+            // Ваш код для отправки данных
+                val intent = Intent(this, SecondActivity::class.java)
+                startActivity(intent)
+
         }
     }
 
-    private fun addTextWatchers() {
-        val textWatcher = object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                // Проверяем, заполнены ли все поля
-                val isFilled =
-                    editText1.text.isNotEmpty() && editText2.text.isNotEmpty() && editText3.text.isNotEmpty()
-                // Обновляем состояние кнопки в зависимости от заполненности полей
-                submitButton.isEnabled = isFilled
-                val color = if (isFilled) R.color.teal_700 else R.color.gray
-                submitButton.backgroundTintList =
-                    ContextCompat.getColorStateList(this@MainActivity, color)
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+    // TextWatcher для отслеживания изменения текста в EditText
+    private val textWatcher = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            checkFields()
         }
-        // Добавляем TextWatcher к полям ввода
-        editText1.addTextChangedListener(textWatcher)
-        editText2.addTextChangedListener(textWatcher)
-        editText3.addTextChangedListener(textWatcher)
+        override fun afterTextChanged(s: Editable?) {}
+    }
+    // Функция для проверки всех полей
+    private fun checkFields() {
+        val isText1Filled = viewBinding.editText1.text.toString().isNotEmpty()
+        val isText2Filled = viewBinding.editText2.text.toString().isNotEmpty()
+        val isText3Filled = viewBinding.editText3.text.toString().isNotEmpty()
+        val isCheckBoxChecked = viewBinding.editBox.isChecked
+
+        viewBinding.submitButton.isEnabled =
+            isText1Filled && isText2Filled && isText3Filled && isCheckBoxChecked
     }
 }
