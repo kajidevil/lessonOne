@@ -1,6 +1,22 @@
 <resources>
     <string name="app_name">homeWork</string>
     <string name="partial_text">
-        Предлагаем ознакомиться с условиями <u><font color="#FF0000"><a href="https://example.com">Договора банковского обслуживания физических лиц</a></font></u> и <u><font color="#FF0000"><a href="https://example.com">типовыми тарифами Банка</a></font></u>.
+        Предлагаем ознакомиться с условиями
+        <u><font color="#9e0606"><a href="https://example.com">Договора банковского обслуживания физических лиц</a></font></u>
+        и <u><font color="#9e0606"><a href="https://example.com">типовыми тарифами Банка</a></font></u>.
     </string>
+    <string name="activity_first_page_bonus_text_one">Бонусы*, которые можно
+потратить на любые покупки </string>
+    <string name="activity_first_page_text_first">+1% гарантированный бонус с каждой покупки</string>
+    <string name="activity_first_page_text_second">+2% дополнительный бонус за депозит от 500 000 тенге</string>
+    <string name="activity_first_page_text_third">+2% дополнительный бонус за остаток на карте  от 100 000 тенге</string>
+    <string name="activity_first_page_name">Имя</string>
+    <string name="activity_first_page_iin">ИИН</string>
+    <string name="activity_first_page_phone_number">Номер телефона</string>
+    <string name="activity_first_page_checkbox_text">Согласие на обработку личных данных</string>
+    <string name="activity_first_page_delivery_text">Доставка платежной карточки возможна только в городах: Астана и Алматы</string>
+    <string name="activity_first_page_button_text">Заказать карту</string>
+    <string name="activity_second_page_success_zayavka">Заявка отправлена</string>
+    <string name="activity_second_page_manager">С вами свяжется наш менеджер</string>
+    <string name="activity_second_page_ty">СПАСИБО</string>
 </resources>

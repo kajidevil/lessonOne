@@ -1,21 +1,18 @@
 package com.example.homework
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
-import androidx.activity.ComponentActivity
-import android.text.Html
-import android.text.method.LinkMovementMethod
-import androidx.appcompat.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.EditText
-import androidx.core.content.ContextCompat
-import android.widget.CheckBox
 import android.util.Log
-//check for root
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.EditText
+import android.widget.Toast
+import androidx.activity.ComponentActivity
+import androidx.core.content.ContextCompat
+import com.example.homework.databinding.ActivityFirstPageBinding
+import android.widget.CheckBox
 
 class MainActivity : ComponentActivity() {
     private lateinit var editText1: EditText
@@ -23,17 +20,20 @@ class MainActivity : ComponentActivity() {
     private lateinit var editText3: EditText
     private lateinit var submitButton: Button
     private lateinit var editbox: CheckBox
+    private lateinit var viewBinding: ActivityFirstPageBinding
 
     // this is comment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.homework1)
+
+        viewBinding = ActivityFirstPageBinding.inflate(layoutInflater)
+        setContentView(viewBinding.root)
+
         editText1 = findViewById(R.id.editText1)
         editText2 = findViewById(R.id.editText2)
         editText3 = findViewById(R.id.editText3)
         editbox = findViewById(R.id.editBox)
         submitButton = findViewById(R.id.submitButton)
-
         // Устанавливаем слушатель для CheckBox
         editbox.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
@@ -53,6 +53,7 @@ class MainActivity : ComponentActivity() {
             startActivity(intent)
         }
     }
+
     private fun addTextWatchers() {
         val textWatcher = object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -65,6 +66,7 @@ class MainActivity : ComponentActivity() {
                 submitButton.backgroundTintList =
                     ContextCompat.getColorStateList(this@MainActivity, color)
             }
+
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         }
