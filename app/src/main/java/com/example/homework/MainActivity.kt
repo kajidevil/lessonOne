@@ -15,7 +15,7 @@ import android.widget.EditText
 import androidx.core.content.ContextCompat
 import android.widget.CheckBox
 import android.util.Log
-
+//check for root
 
 class MainActivity : ComponentActivity() {
     private lateinit var editText1: EditText
