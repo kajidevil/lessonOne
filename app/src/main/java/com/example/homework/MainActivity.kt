@@ -1,29 +1,34 @@
 package com.example.homework
 
-import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import androidx.activity.ComponentActivity
-import com.example.homework.databinding.ActivityFirstPageBinding
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.homework.databinding.ActivityMainBinding
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewBinding: ActivityFirstPageBinding
-    // this is comment
+    private lateinit var viewBinding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewBinding = ActivityFirstPageBinding.inflate(layoutInflater)
+        viewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
+        val navController = findNavController(R.id.nav_host_fragment)
+        setupActionBarWithNavController(navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
 
 
+    /*// TextWatcher для отслеживания изменения текста в EditText
 
-
-
-
-// Добавляем TextWatcher для каждого поля EditText
-        viewBinding.editText1.addTextChangedListener(textWatcher)
+    // Добавляем TextWatcher для каждого поля EditText
+       /* viewBinding.editText1.addTextChangedListener(textWatcher)
         viewBinding.editText2.addTextChangedListener(textWatcher)
         viewBinding.editText3.addTextChangedListener(textWatcher)
 
@@ -33,20 +38,19 @@ class MainActivity : ComponentActivity() {
         // Обработчик для кнопки
         viewBinding.submitButton.setOnClickListener {
             // Ваш код для отправки данных
-                val intent = Intent(this, SecondActivity::class.java)
-                startActivity(intent)
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
 
-        }
-    }
-
-    // TextWatcher для отслеживания изменения текста в EditText
+        }*/
     private val textWatcher = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             checkFields()
         }
+
         override fun afterTextChanged(s: Editable?) {}
     }
+
     // Функция для проверки всех полей
     private fun checkFields() {
         val isText1Filled = viewBinding.editText1.text.toString().isNotEmpty()
@@ -56,5 +60,5 @@ class MainActivity : ComponentActivity() {
 
         viewBinding.submitButton.isEnabled =
             isText1Filled && isText2Filled && isText3Filled && isCheckBoxChecked
-    }
+    }*/
 }

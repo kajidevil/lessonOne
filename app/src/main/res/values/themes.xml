@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.HomeWork" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- Change the parent theme to an AppCompat theme -->
+    <style name="Theme.HomeWork" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- You can customize your theme attributes here if needed -->
+    </style>
 </resources>
