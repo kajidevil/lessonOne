@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.homework.databinding.FragmentCardBinding
 
 class CardFragment : Fragment() {
@@ -24,14 +25,14 @@ class CardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navController=findNavController()
 
         viewBinding.editText1.addTextChangedListener(textWatcher)
         viewBinding.editText2.addTextChangedListener(textWatcher)
         viewBinding.editText3.addTextChangedListener(textWatcher)
-
         viewBinding.editBox.setOnCheckedChangeListener { _, _ -> checkFields() }
         viewBinding.submitButton.setOnClickListener {
-
+            navController.navigate(R.id.action_firstFragment_to_secondFragment)
         }
     }
 

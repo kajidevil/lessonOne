@@ -7,5 +7,14 @@
     <fragment
         android:id="@+id/cardFragment"
         android:name="com.example.homework.CardFragment"
-        android:label="CardFragment" />
+        android:label="CardFragment">
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.homework.SecondFragment"
+        android:label="Second Fragment" />
+
 </navigation>
