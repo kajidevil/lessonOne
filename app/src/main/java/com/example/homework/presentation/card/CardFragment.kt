@@ -1,4 +1,4 @@
-package com.example.homework
+package com.example.homework.presentation.card
 
 import android.os.Bundle
 import android.text.Editable
@@ -7,12 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.homework.R
 import com.example.homework.databinding.FragmentCardBinding
 
 class CardFragment : Fragment() {
 
     private lateinit var viewBinding: FragmentCardBinding
+    private val viewModel: CardViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,7 +35,8 @@ class CardFragment : Fragment() {
         viewBinding.editText3.addTextChangedListener(textWatcher)
         viewBinding.editBox.setOnCheckedChangeListener { _, _ -> checkFields() }
         viewBinding.submitButton.setOnClickListener {
-            navController.navigate(R.id.action_firstFragment_to_secondFragment)
+            //navController.navigate(R.id.action_firstFragment_to_secondFragment)
+            viewModel.getUsers()
         }
     }
 
