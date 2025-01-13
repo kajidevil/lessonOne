@@ -1,11 +1,10 @@
-package com.example.homework
+package com.example.homework.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.homework.databinding.FragmentCardBinding
 import com.example.homework.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
