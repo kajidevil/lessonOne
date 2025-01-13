@@ -36,7 +36,7 @@ class CardFragment : Fragment() {
         viewBinding.editBox.setOnCheckedChangeListener { _, _ -> checkFields() }
         viewBinding.submitButton.setOnClickListener {
             //navController.navigate(R.id.action_firstFragment_to_secondFragment)//старое навигация
-            //viewModel.getUsers() // старый пример
+            viewModel.getUsers() // старый пример
             viewModel.getPost()
             viewModel.getComment()
 
