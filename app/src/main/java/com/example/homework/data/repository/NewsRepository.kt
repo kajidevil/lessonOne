@@ -3,10 +3,14 @@ package com.example.homework.data.repository
 import com.example.homework.data.model.CommentsResponse
 import com.example.homework.data.model.PostResponse
 import com.example.homework.data.model.UserResponse
-import com.example.homework.data.network.Network.newsApi
+import com.example.homework.data.network.NewsApi
 import retrofit2.Response
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class NewsRepository {
+class NewsRepository @Inject constructor(
+    private val newsApi: NewsApi,
+){
     suspend fun getUsersData(): Response<List<UserResponse>> {
         return newsApi.getUsersData()
     }

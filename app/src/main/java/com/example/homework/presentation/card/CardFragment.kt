@@ -11,7 +11,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.homework.R
 import com.example.homework.databinding.FragmentCardBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CardFragment : Fragment() {
 
     private lateinit var viewBinding: FragmentCardBinding
